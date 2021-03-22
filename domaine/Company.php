@@ -9,6 +9,8 @@ class Company
      public const PAY_DATE         = 'pay_date';
      public const DECLARATION_DATE = 'declaration_date';
      public const DIVIDEND_YIELD   = 'dividend_yield';
+     public const NAME             = 'name';
+     public const ID               = 'id';
      public static function toto() {
          echo ('toto');
      }

@@ -5,7 +5,8 @@ $pathToolsTest = $pathRoot . "/ProjectFinance/ToolsAndUtils/ToolsTest.php";
 include_once($pathToolsTest);
 include_once($pathCompanyService);
 
-echo "<h3 style='text-decoration: underline'>(Function companyGetAll) Recover all of my collones in the company table</h3>";
-echo('test get all company returning data : ');
+$resultJsonExDividendAfterDate = json_encode(CompanyService::companyAfterDate($_GET['afterDate']));
+header('Content-type: application/json');
+echo($resultJsonExDividendAfterDate);
 
-echo(sizeof(CompanyService::companyGetAll()) > 0 ? $succes : $echec);
+

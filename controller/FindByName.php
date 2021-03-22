@@ -5,7 +5,8 @@ $pathToolsTest = $pathRoot . "/ProjectFinance/ToolsAndUtils/ToolsTest.php";
 include_once($pathToolsTest);
 include_once($pathCompanyService);
 
-echo "<h3 style='text-decoration: underline'>(Function companyGetAll) Recover all of my collones in the company table</h3>";
-echo('test get all company returning data : ');
+$resultJsonFindByName = json_encode(CompanyService::companyFindByName($_GET['name']));
+header('Content-type: application/json');
+echo($resultJsonFindByName);
 
-echo(sizeof(CompanyService::companyGetAll()) > 0 ? $succes : $echec);
+
