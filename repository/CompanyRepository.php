@@ -48,7 +48,7 @@ class CompanyRepository
     public static function greaterOrEgalYield($yield): array
     {
         $pdo = ConnexionDb::getConnexionDb();
-        return $pdo->query("SELECT * FROM company WHERE (" . company::DIVIDEND_YIELD . " >= $yield ) ORDER BY " . company::DIVIDEND_YIELD . " ASC")->fetchAll();
+        return $pdo->query("SELECT * FROM company WHERE (" . company::DIVIDEND_YIELD . " >= '$yield' ) ORDER BY " . company::DIVIDEND_YIELD . " ASC")->fetchAll();
     }
 
     /**
@@ -68,7 +68,7 @@ class CompanyRepository
     public static function findById($id): array
     {
         $pdo = connexionDb::getConnexionDb();
-        return $pdo->query("SELECT * FROM company WHERE " . company::ID . "= $id ")->fetchAll();
+        return $pdo->query("SELECT * FROM company WHERE " . company::ID . "= '$id' ")->fetchAll();
     }
 
 }

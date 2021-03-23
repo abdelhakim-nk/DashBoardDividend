@@ -20,17 +20,9 @@ class CompanyService
      * @param $endDate
      * @return array
      */
-    public static function companyBetweenDate($startDate, $endDate)
+    public static function companyBetweenDate($startDate, $endDate): array
     {
-        try {
-            if (empty($_GET['startDate']) and empty($_GET['endDate'])){
-                throw new Error('veuillez entrer une date de debut et de fin !', 400);
-            } else {
-                return CompanyRepository::betweenDate($_GET['startDate'], $_GET['endDate']);
-            }
-        }catch(Error $e){
-            echo json_encode(array("succes" => false,"message" => $e->getMessage(),"code" => $e->getCode()));
-        }
+        return CompanyRepository::betweenDate($startDate, $endDate);
     }
 
 
@@ -38,17 +30,9 @@ class CompanyService
      * @param $afterDate
      * @return array
      */
-    public static function companyAfterDate($afterDate)
+    public static function companyAfterDate($afterDate): array
     {
-        try {
-            if (empty($_GET['afterDate'])) {
-                throw new Error('Aucune Date n\'est retourner en paramètre!', 400);
-            } else {
-                return CompanyRepository::AfterDate($_GET['afterDate']);
-            }
-        } catch (Error $e) {
-            echo json_encode(array("succes" => false, "message" => $e->getMessage(), "code" => $e->getCode()));
-        }
+        return CompanyRepository::AfterDate($afterDate);
     }
 
 
@@ -56,18 +40,9 @@ class CompanyService
      * @param string $yield
      * @return array
      */
-    public static function companyGreaterOrEgalYield(string $yield)
+    public static function companyGreaterOrEgalYield(string $yield): array
     {
-        $check = is_numeric($_GET['yield']);
-        try {
-            if (!$check) {
-              throw new Error("Please enter a number",400);
-            } else {
-                return CompanyRepository::greaterOrEgalYield($_GET['yield']);
-            }
-        } catch (Error $e) {
-            echo json_encode(array("succes" => false, "message" => $e->getMessage(), "code" => $e->getCode()));
-        }
+        return CompanyRepository::greaterOrEgalYield($yield);
     }
 
 
@@ -75,17 +50,9 @@ class CompanyService
      * @param $name
      * @return array
      */
-    public static function companyFindByName(string $name)
+    public static function companyFindByName(string $name): array
     {
-        try {
-            if (strlen($_GET['name']) <= 2) {
-                throw new Error("Bad Request :", 400);
-            } else {
-                return CompanyRepository::findByName($_GET['name']);
-            }
-        } catch (Error $e) {
-            echo json_encode(array("succes" => false, "message" => $e->getMessage(), "code" => $e->getCode()));
-        }
+        return CompanyRepository::findByName($name);
     }
 
 
@@ -93,19 +60,9 @@ class CompanyService
      * @param string $id
      * @return array
      */
-    public static function companyFindById(string $id)
+    public static function companyFindById(string $id): array
     {
-        $check = is_numeric($_GET['id']);
-        try {
-            if (!$check) {
-                throw new Error("Please enter a number",400);
-            } else {
-                return companyRepository::findById($_GET['id']);
-            }
-        } catch (Error $e) {
-            echo json_encode(array("succes" => false, "message" => $e->getMessage(), "code" => $e->getCode()));
-        }
-
+        return companyRepository::findById($id);
     }
 
 }
