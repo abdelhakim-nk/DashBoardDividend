@@ -5,18 +5,21 @@ $pathToolsTest = $pathRoot . "/ProjectFinance/ToolsAndUtils/ToolsTest.php";
 include_once($pathToolsTest);
 include_once($pathCompanyService);
 
-$resultJsonFindById = json_encode(CompanyService::companyFindById($_GET['id']));
-header('Content-type: application/json');
-
 
 try {
     if (is_numeric($_GET['id'])) {
         http_response_code(200);
-        echo($resultJsonFindById);
+        header('Content-type: application/json');
+        echo(json_encode(CompanyService::companyFindById($_GET['id'])));
     } else {
-        throw new InvalidArgumentException("Bad Request : Please enter a number", 400);
+        throw new InvalidArgumentException("Please enter a number");
     }
 } catch (InvalidArgumentException $e) {
     http_response_code(400);
-    echo json_encode(array("message" => $e->getMessage(), "code" => $e->getCode()));
+    header('Content-type: application/json');
+    echo json_encode(array("message" => "Bad Request : " . $e->getMessage(), "code" => 400));
+} catch (Exception $e) {
+    http_response_code(500);
+    header('Content-type: application/json');
+    echo json_encode(array("message" => 'Error server', "code" => 500));
 }

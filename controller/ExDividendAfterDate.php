@@ -5,18 +5,22 @@ $pathToolsTest = $pathRoot . "/ProjectFinance/ToolsAndUtils/ToolsTest.php";
 include_once($pathToolsTest);
 include_once($pathCompanyService);
 
-$resultJsonExDividendAfterDate = json_encode(CompanyService::companyAfterDate($_GET['afterDate']));
-header('Content-type: application/json');
 
 try {
     if (!empty($_GET['afterDate'])) {
         http_response_code(200);
-        echo($resultJsonExDividendAfterDate);
+        header('Content-type: application/json');
+        echo(json_encode(CompanyService::companyAfterDate($_GET['afterDate'])));
     } else {
         http_response_code(400);
-        throw new InvalidArgumentException('Please enter a correct date', 400);
+        throw new InvalidArgumentException('Please enter a correct date');
 
     }
 } catch (InvalidArgumentException $e) {
-    echo json_encode(array("succes" => false, "message" => $e->getMessage(), "code" => $e->getCode()));
+    header('Content-type: application/json');
+    echo json_encode(array("message" => "Bad Request : ". $e->getMessage(), "code" => 400));
+} catch (Exception $e) {
+    http_response_code(500);
+    header('Content-type: application/json');
+    echo json_encode(array("message" => 'Error server', "code" => 500));
 }
