@@ -30,7 +30,7 @@ echo "<br>";
 
 for ($i = 0; $i < sizeof($arrayReponse); $i++) {
     echo "<br>";
-    echo('Test If '.$arrayReponse[$i][company::NAME].' content param : '.$name);
+    echo('Test If ' . $arrayReponse[$i][company::NAME] . ' content param : ' . $name);
     echo(stristr($arrayReponse[$i][company::NAME], $name) !== false ? $succes : $echec);
 }
 echo('Test to verify if my exception is returned : ');

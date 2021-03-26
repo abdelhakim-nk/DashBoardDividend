@@ -6,7 +6,6 @@ include_once($pathToolsTest);
 include_once($pathCompanyService);
 
 
-
 try {
     if (strlen($_GET['name']) >= 3) {
         http_response_code(200);
@@ -18,7 +17,7 @@ try {
 } catch (InvalidArgumentException $e) {
     http_response_code(400);
     header('Content-type: application/json');
-    echo json_encode(array("message" => "Bad Request : ". $e->getMessage(), "code" => 400));
+    echo json_encode(array("message" => "Bad Request : " . $e->getMessage(), "code" => 400));
 } catch (Exception $e) {
     http_response_code(500);
     header('Content-type: application/json');

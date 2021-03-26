@@ -7,7 +7,7 @@ include_once($pathCompanyService);
 
 $yieldParam = 15;
 
-echo "<h3 style='text-decoration: underline'>(Function companyGreaterOrEgalYield) Yield greater than or equal to a given yield</h3>";
+echo "<h3 style='text-decoration: underline'>Function companyGreaterOrEgalYield) Yield greater than or equal to a given yield</h3>";
 
 echo('test if array company is not NULL or empty : ');
 $arrayReponse = CompanyService::companyGreaterOrEgalYield($yieldParam);

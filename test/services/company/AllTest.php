@@ -2,7 +2,7 @@
 
 $pathRoot = $_SERVER['DOCUMENT_ROOT'];
 $pathTestGetAll = $pathRoot . "/ProjectFinance/test/services/company/All.php";
-$pathTestGreaterOrEgalYield = $pathRoot . "/ProjectFinance/test/services/company/GetByGreaterOrEgalYield.php";
+$pathTestGreaterOrEgalYield = $pathRoot . "/ProjectFinance/test/services/company/GreaterOrEgalYield.php";
 $pathTestExDividendAfterDate = $pathRoot . "/ProjectFinance/test/services/company/GetExDividendAfterDate.php";
 $pathTestExDividendBetweenDate = $pathRoot . "/ProjectFinance/test/services/company/GetExDividendBetweenDate.php";
 $pathTestFindByName = $pathRoot . "/ProjectFinance/test/services/company/GetFindByName.php";
