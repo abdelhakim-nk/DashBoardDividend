@@ -7,11 +7,41 @@ include_once($path);
 class CompanyService
 {
     /**
+     * @param $start
+     * @param $articleByPages
+     * @return array
+     */
+    public static function companyGetPagination($start, $articleByPages): array
+    {
+        return CompanyRepository::getPagination($start, $articleByPages);
+    }
+
+    /**
+     * @param $yield
+     * @return array
+     */
+    public static function companyGetAllWithPossibilitySearchingByDividend($yield): array
+    {
+        return CompanyRepository::getAllWithPossibilitySearchingByDividend($yield);
+    }
+
+    /**
+     * @param $yield
+     * @param $start
+     * @param $articleByPages
+     * @return array
+     */
+    public static function companyGetAllWithPossibilitySearchingByDividendAndPagination($yield, $start, $articleByPages): array
+    {
+        return CompanyRepository::getAllWithPossibilitySearchingByDividendAndPagination($yield, $start, $articleByPages);
+    }
+
+    /**
      * @return array
      */
     public static function companyGetAll(): array
     {
-        return CompanyRepository::GetAll();
+        return CompanyRepository::getAll();
     }
 
 
@@ -22,20 +52,11 @@ class CompanyService
      */
     public static function companyBetweenDate($startDate, $endDate)
     {
-        try {
-            if (!empty($_GET['startDate']) and !empty($_GET['endDate'])) {
-                http_response_code(200);
-                return CompanyRepository::betweenDate($startDate, $endDate);
-            } else {
-                http_response_code(400);
-                throw new InvalidArgumentException('please enter a start and end date !');
-            }
-        } catch (InvalidArgumentException $e) {
-            header('Content-type: application/json');
-            return array("message" => $e->getMessage(), "code" => 400);
-        } catch (Exception $e) {
-            http_response_code(500);
-            return array("message" => 'Error server', "code" => 500);
+        if (empty($startDate) and empty($endDate)) {
+            http_response_code(400);
+            throw new Error('please enter a start and end date !', 400);
+        } else {
+            return CompanyRepository::betweenDate($startDate, $endDate);
         }
     }
 
@@ -45,7 +66,7 @@ class CompanyService
      */
     public static function companyAfterDate($afterDate): array
     {
-        return CompanyRepository::AfterDate($afterDate);
+        return CompanyRepository::afterDate($afterDate);
     }
 
 
@@ -75,6 +96,15 @@ class CompanyService
      */
     public static function companyFindById(string $id): array
     {
-        return companyRepository::findById($id);
+        return CompanyRepository::findById($id);
+    }
+
+
+    /**
+     * @return array
+     */
+    public static function companyNbRow(): array
+    {
+        return CompanyRepository::nbRow();
     }
 }

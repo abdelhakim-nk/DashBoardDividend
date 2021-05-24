@@ -9,13 +9,46 @@ include_once($pathCompany);
 class CompanyRepository
 {
     /**
-     * Returns the entire array dividendmax
+     * @param $start
+     * @param $articleByPages
      * @return array
      */
-    public static function GetAll(): array
+    public static function getPagination($start, $articleByPages): array
+    {
+        $pdo = ConnexionDb::getConnexionDb();
+        return $pdo->query("SELECT * FROM company LIMIT " . $start . "," . $articleByPages)->fetchAll();
+    }
+
+    /**
+     * * Returns the entire array of table company
+     * @return array
+     */
+    public static function getAll(): array
     {
         $pdo = ConnexionDb::getConnexionDb();
         return $pdo->query("SELECT * FROM company")->fetchAll();
+    }
+
+    /**
+     * @param $yield
+     * @return array
+     */
+    public static function getAllWithPossibilitySearchingByDividend($yield): array
+    {
+        $pdo = ConnexionDb::getConnexionDb();
+        return $pdo->query("SELECT * FROM company WHERE " . Company::DIVIDEND_YIELD . " >= " . $yield . " ORDER BY " . Company::NAME . " ASC ")->fetchAll();
+    }
+
+    /**
+     * @param $yield
+     * @param $start
+     * @param $articleByPages
+     * @return array
+     */
+    public static function getAllWithPossibilitySearchingByDividendAndPagination($yield, $start, $articleByPages): array
+    {
+        $pdo = ConnexionDb::getConnexionDb();
+        return $pdo->query("SELECT * FROM company WHERE " . Company::DIVIDEND_YIELD . " >= " . $yield . " ORDER BY " . Company::NAME . " ASC LIMIT " . $start . "," . $articleByPages)->fetchAll();
     }
 
     /**
@@ -26,7 +59,7 @@ class CompanyRepository
     public static function betweenDate($startDate, $endDate): array
     {
         $pdo = ConnexionDb::getConnexionDb();
-        return $pdo->query("SELECT * FROM company WHERE " . company::EX_DIV_DATE . " BETWEEN '$startDate' AND '$endDate'  ORDER BY " . company::EX_DIV_DATE . " ASC ")->fetchAll();
+        return $pdo->query("SELECT * FROM company WHERE " . Company::EX_DIV_DATE . " BETWEEN '$startDate' AND '$endDate'  ORDER BY " . company::EX_DIV_DATE . " ASC ")->fetchAll();
     }
 
 
@@ -34,7 +67,7 @@ class CompanyRepository
      * @param $afterDate
      * @return array
      */
-    public static function AfterDate($afterDate): array
+    public static function afterDate($afterDate): array
     {
         $pdo = ConnexionDb::getConnexionDb();
         return $pdo->query("SELECT * FROM company WHERE (" . Company::EX_DIV_DATE . " > '$afterDate') ORDER BY " . Company::EX_DIV_DATE . " ASC")->fetchAll();
@@ -48,7 +81,7 @@ class CompanyRepository
     public static function greaterOrEgalYield($yield): array
     {
         $pdo = ConnexionDb::getConnexionDb();
-        return $pdo->query("SELECT * FROM company WHERE (" . company::DIVIDEND_YIELD . " >= '$yield' ) ORDER BY " . company::DIVIDEND_YIELD . " ASC")->fetchAll();
+        return $pdo->query("SELECT * FROM company WHERE (" . Company::DIVIDEND_YIELD . " >= '$yield' ) ORDER BY " . company::DIVIDEND_YIELD . " ASC")->fetchAll();
     }
 
     /**
@@ -58,7 +91,7 @@ class CompanyRepository
     public static function findByName($name): array
     {
         $pdo = ConnexionDb::getConnexionDb();
-        return $pdo->query("SELECT * FROM company WHERE " . company::NAME . " LIKE '$name%'")->fetchAll();
+        return $pdo->query("SELECT * FROM company WHERE " . Company::NAME . " LIKE '$name%'")->fetchAll();
     }
 
     /**
@@ -68,7 +101,16 @@ class CompanyRepository
     public static function findById($id): array
     {
         $pdo = connexionDb::getConnexionDb();
-        return $pdo->query("SELECT * FROM company WHERE " . company::ID . "= '$id' ")->fetchAll();
+        return $pdo->query("SELECT * FROM company WHERE " . Company::ID . "= '$id' ")->fetchAll();
+    }
+
+    /**
+     * @return array
+     */
+    public static function nbRow(): array
+    {
+        $pdo = connexionDb::getConnexionDb();
+        return $pdo->query("SELECT COUNT(id) as nbRow FROM company")->fetchAll();
     }
 
 }
