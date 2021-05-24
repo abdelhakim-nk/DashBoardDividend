@@ -10,7 +10,7 @@ Pour finir toutes les informations se trouvent soit sous forme de tableau soit s
 Il s'agit de mon premier gros projet pour le moment il n'est pas entièrement fini je compte l'améliorer au fil du temps.
 
 Les technos utilisées sont les suivantes: 
-               - HTML
+                 HTML
                - CSS
                - PHP
                - SQL
