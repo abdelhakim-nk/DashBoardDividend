@@ -22,5 +22,5 @@ Les technos, utilisées sont les suivantes:
 - AJAX
 - BOOTSTRAP
 - API REST
-- 
+
 Merci d'avoir pris le temps de lire la description de mon projet et de vous êtes intéressé à lui. :)
