@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])) {
-    header('Location:memberArea/index.php');
+    header('Location:controller/view/memberArea/Connection.php');
     die();
 }
 ?>
@@ -11,7 +11,7 @@ if (!isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="home/css/styles.css">
+    <link rel="stylesheet" href="controller/view/home/css/styles.css">
 
     <title>Home page project finance</title>
 </head>
@@ -20,18 +20,21 @@ if (!isset($_SESSION['user'])) {
 <h1>Home</h1>
 
 <?php
-include_once('home/HomeNavMenu.php');
+include_once('controller/view/home/HomeNavMenu.php');
 ?>
 
 <div id="container">
     <div class="home_img">
-        <img src="home/img/stock%20exchange.png" alt="stock Exchange">
+        <img src="controller/view/home/img/stock exchange.png" alt="stock Exchange">
     </div>
     <div class="home_img">
-        <img src="home/img/dividend%20board.png" alt="Dividends">
+        <img src="controller/view/home/img/dividend board.png" alt="Dividends">
     </div>
     <div class="home_img">
-        <img src="home/img/graphic.png" alt="Grapic">
+        <img src="controller/view/home/img/graphic.png" alt="Grapic">
+    </div>
+    <div class="home_img">
+        <img src="controller/view/home/img/news_actu.jpg" alt="Grapic">
     </div>
 </div>
 
@@ -47,6 +50,6 @@ include_once('home/HomeNavMenu.php');
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
 <!-- ======= MAIN JS ======== -->
-<script src="home/javascript/main.js"></script>
+<script src="controller/view/home/javascript/main.js"></script>
 </body>
 </html>

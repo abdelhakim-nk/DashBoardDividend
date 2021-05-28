@@ -1,8 +1,8 @@
 <?php
 
 $pathRoot = $_SERVER['DOCUMENT_ROOT'];
-$pathDb = $pathRoot . "/ProjectFinance/configuration/DataBase.php";
-$pathCompany = $pathRoot . "/ProjectFinance/domaine/Company.php";
+$pathDb = $pathRoot . "/ProjectFinance/assets/configuration/DataBase.php";
+$pathCompany = $pathRoot . "/ProjectFinance/assets/domaine/Company.php";
 include_once($pathDb);
 include_once($pathCompany);
 

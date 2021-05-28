@@ -123,3 +123,14 @@ a{
 .active{
     background-color: var(--first-color);
 }
+
+/*--============ Home Images =================--*/
+#container{
+    display: flex;
+    justify-content: space-around;
+}
+
+img{
+    width: 30em;
+    height: auto;
+}

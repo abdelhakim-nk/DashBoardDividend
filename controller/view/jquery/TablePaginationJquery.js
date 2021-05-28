@@ -18,9 +18,9 @@ $(document).ready(function () {
                 table += '<td style="border: 1px solid black">' + response[i]['declaration_date'] + '</td>';
                 table += '<td style="border: 1px solid black">' + response[i]['ex_div_date'] + '</td>';
                 table += '<td style="border: 1px solid black">' + response[i]['pay_date'] + '</td>';
+                table += '<td style="border: 1px solid black">' + response[i]['dividend_yield'] + '</td>';
                 table += '</tr>';
             }
-
             $('#tbodyJquery').append(table);
         }
     });
@@ -47,6 +47,7 @@ function next() {
                 table += '<td style="border: 1px solid black">' + response[i]['declaration_date'] + '</td>';
                 table += '<td style="border: 1px solid black">' + response[i]['ex_div_date'] + '</td>';
                 table += '<td style="border: 1px solid black">' + response[i]['pay_date'] + '</td>';
+                table += '<td style="border: 1px solid black">' + response[i]['dividend_yield'] + '</td>';
                 table += '</tr>';
             }
             $('#tbodyJquery').append(table);
@@ -78,6 +79,7 @@ function previous() {
                 table += '<td style="border: 1px solid black">' + response[i]['declaration_date'] + '</td>';
                 table += '<td style="border: 1px solid black">' + response[i]['ex_div_date'] + '</td>';
                 table += '<td style="border: 1px solid black">' + response[i]['pay_date'] + '</td>';
+                table += '<td style="border: 1px solid black">' + response[i]['dividend_yield'] + '</td>';
                 table += '</tr>';
             }
             $('#tbodyJquery').append(table);

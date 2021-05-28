@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['user'])) {
-    header('./Index.php');
+    header('./Connection.php');
     die();
 }
 ?>
@@ -52,7 +52,7 @@ if (isset($_SESSION['user'])) {
     }
     ?>
 
-    <form action="connection.php" method="post">
+    <form action="ConnectionProcessing.php" method="post">
         <h2 class="text-center">Connexion</h2>
         <div class="form-group">
             <input type="email" name="email" class="form-control" placeholder="Email" required="required"

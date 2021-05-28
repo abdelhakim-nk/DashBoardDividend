@@ -52,12 +52,7 @@ class CompanyService
      */
     public static function companyBetweenDate($startDate, $endDate)
     {
-        if (empty($startDate) and empty($endDate)) {
-            http_response_code(400);
-            throw new Error('please enter a start and end date !', 400);
-        } else {
-            return CompanyRepository::betweenDate($startDate, $endDate);
-        }
+        return CompanyRepository::betweenDate($startDate, $endDate);
     }
 
     /**

@@ -1,12 +1,12 @@
 <?php
 
 $pathRoot = $_SERVER['DOCUMENT_ROOT'];
-$pathTestGetAll = $pathRoot . "/ProjectFinance/view/services/company/GetAll.php";
-$pathTestGreaterOrEgalYield = $pathRoot . "/ProjectFinance/view/services/company/GetByGreaterOrEgalYield.php";
-$pathTestExDividendAfterDate = $pathRoot . "/ProjectFinance/view/services/company/GetExDividendAfterDate.php";
-$pathTestExDividendBetweenDate = $pathRoot . "/ProjectFinance/view/services/company/GetExDividendBetweenDate.php";
-$pathTestFindByName = $pathRoot . "/ProjectFinance/view/services/company/GetFindByName.php";
-$pathTestFindById = $pathRoot . "/ProjectFinance/view/services/company/GetFindById.php";
+$pathTestGetAll = $pathRoot . "/ProjectFinance/assets/test/services/company/GetAll.php";
+$pathTestGreaterOrEgalYield = $pathRoot . "/ProjectFinance/assets/test/services/company/GetByGreaterOrEgalYield.php";
+$pathTestExDividendAfterDate = $pathRoot . "/ProjectFinance/assets/test/services/company/GetExDividendAfterDate.php";
+$pathTestExDividendBetweenDate = $pathRoot . "/ProjectFinance/assets/test/services/company/GetExDividendBetweenDate.php";
+$pathTestFindByName = $pathRoot . "/ProjectFinance/assets/test/services/company/GetFindByName.php";
+$pathTestFindById = $pathRoot . "/ProjectFinance/assets/test/services/company/GetFindById.php";
 
 echo "<h1 style='text-decoration: underline'>Set of my tests </h1>";
 

@@ -1,6 +1,6 @@
 <?php
 $pathRoot = $_SERVER['DOCUMENT_ROOT'];
-$pathDb = $pathRoot . "/ProjectFinance/configuration/DataBase.php";
+$pathDb = $pathRoot . "/ProjectFinance/assets/configuration/DataBase.php";
 session_start();
 include_once($pathDb);
 
@@ -34,11 +34,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             if ($data['password'] === $password) {
                 /* Creation d'une session que j'apelle user et je lui attribut le pseudo du user comme valeur*/
                 $_SESSION['user'] = $data['pseudo'];
-                header('Location: ProjectFinance/Index.php');
-            } else header('Location: Index.php?login_err=password');
+                header('Location: /ProjectFinance/Index.php');
+            } else header('Location: Connection.php?login_err=password');
 
-        } else header('Location: Index.php?login_err=email');
+        } else header('Location: Connection.php?login_err=email');
 
-    }    else header('Location: Index.php?login_err=already');
+    }    else header('Location: Connection.php?login_err=already');
 
-} else header('Location: Index.php');
+} else header('Location: Connection.php');

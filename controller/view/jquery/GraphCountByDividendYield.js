@@ -1,0 +1,103 @@
+$(document).ready(function () {
+    $.ajax({
+        type: "GET",
+        url: "/ProjectFinance/controller/api/ControllerAll.php",
+        dataType: "json",
+        success: function (response) {
+            var arrayReponse = response;
+            var i;
+            var col1 = 0;
+            var col2 = 0;
+            var col3 = 0;
+            var col4 = 0;
+            var col5 = 0;
+            var col6 = 0;
+            for (i = 0; i < arrayReponse.length; i++) {
+                if (predicateYieldBetween0and1(arrayReponse[i])) {
+                    col1++;
+                } else if (predicateYieldBetween1and2(arrayReponse[i])) {
+                    col2++;
+                } else if (predicateYieldBetween2and3(arrayReponse[i])) {
+                    col3++;
+                } else if (predicateYieldBetween3and4(arrayReponse[i])) {
+                    col4++;
+                } else if (predicateYieldBetween4and5(arrayReponse[i])) {
+                    col5++;
+                } else {
+                    col6++;
+                }
+            }
+            var ctx = document.getElementById('graph1').getContext('2d');
+
+
+            var data = {
+                labels: ['0 & 1', '1 & 2', '2 & 3', '3 & 4', '4 & 5', '5 and the rest'],
+                datasets: [{
+                    label: 'Company',
+                    data: [col1, col2, col3, col4, col5, col6],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(255, 159, 64)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(54, 162, 235)',
+                        'rgb(153, 102, 255)',
+                    ],
+                    borderWidth: 1
+                }]
+            }
+
+            var options = {
+                responsive: true,
+                maintainAspectRatio: true,
+            };
+
+
+            var config = {
+                type: 'bar',
+                data: data,
+                options: options
+            };
+
+
+            var graph1 = new Chart(ctx, config);
+        }
+
+
+    });
+})
+
+
+function predicateYieldBetween0and1(element) {
+    return element['dividend_yield'] >= 0 && element['dividend_yield'] <= 1;
+}
+
+
+function predicateYieldBetween1and2(element) {
+    return element['dividend_yield'] > 1 && element['dividend_yield'] <= 2;
+}
+
+
+function predicateYieldBetween2and3(element) {
+    return element['dividend_yield'] > 2 && element['dividend_yield'] <= 3;
+}
+
+function predicateYieldBetween3and4(element) {
+    return element['dividend_yield'] > 3 && element['dividend_yield'] <= 4;
+}
+
+function predicateYieldBetween4and5(element) {
+    return element['dividend_yield'] > 4 && element['dividend_yield'] <= 5;
+}
+
+function predicateYieldBetween5andTheRest(element) {
+    return element['dividend_yield'] > 5;
+}

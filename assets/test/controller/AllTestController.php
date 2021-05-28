@@ -1,11 +1,11 @@
 <?php
 $pathRoot = $_SERVER['DOCUMENT_ROOT'];
-$pathTestGetAll = $pathRoot . "/ProjectFinance/view/controller/ControllerAll.php";
-$pathTestGreaterOrEgalYield = $pathRoot . "/ProjectFinance/view/controller/GreaterOrEgalYield.php";
-$pathTestExDividendAfterDate = $pathRoot . "/ProjectFinance/view/controller/ExDividendAfterDate.php";
-$pathTestExDividendBetweenDate = $pathRoot . "/ProjectFinance/view/controller/ExDividendBetweenDate.php";
-$pathTestFindByName = $pathRoot . "/ProjectFinance/view/controller/FindByName.php";
-$pathTestFindById = $pathRoot . "/ProjectFinance/view/controller/FindById.php";
+$pathTestGetAll = $pathRoot . "/ProjectFinance/assets/test/controller/ControllerAll.php";
+$pathTestGreaterOrEgalYield = $pathRoot . "/ProjectFinance/assets/test/controller/GreaterOrEgalYield.php";
+$pathTestExDividendAfterDate = $pathRoot . "/ProjectFinance/assets/test/controller/ExDividendAfterDate.php";
+$pathTestExDividendBetweenDate = $pathRoot . "/ProjectFinance/assets/test/controller/ExDividendBetweenDate.php";
+$pathTestFindByName = $pathRoot . "/ProjectFinance/assets/test/controller/FindByName.php";
+$pathTestFindById = $pathRoot . "/ProjectFinance/assets/test/controller/FindById.php";
 
 echo "<h1 style='text-decoration: underline'>Set of my tests for my controller</h1>";
 

@@ -1,6 +1,6 @@
 <?php
 $pathRoot = $_SERVER['DOCUMENT_ROOT'];
-$pathCompany = $pathRoot . "/ProjectFinance/domaine/Company.php";
+$pathCompany = $pathRoot . "/ProjectFinance/assets/domaine/Company.php";
 $pathCompanyService = $pathRoot . "/ProjectFinance/services/CompanyService.php";
 include_once($pathCompany);
 include_once($pathCompanyService);
