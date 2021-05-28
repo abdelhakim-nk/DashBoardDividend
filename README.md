@@ -1,4 +1,4 @@
-Résumé Project finance :
+#DashBoardDividend
 
 Il s'agit d'un Dashboard permettant d'être utilisé comme support pour l'achat d'actions, se Dashboard permet de connaître et de comparer le dividende de centaines de sociétés sur des années précises, cela permet de mieux choisir dans quelle société investir.
 
