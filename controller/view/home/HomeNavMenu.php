@@ -36,6 +36,10 @@
                     </a>
                 </div>
             </div>
+            <a href="/ProjectFinance/controller/view/memberArea/Disconnection.php" class="nav_deco">
+                <ion-icon name="power" class="nav_icon"></ion-icon>
+                <span class="nav_name">Déconnexion</span>
+            </a>
             <a href="/ProjectFinance/controller/view/memberArea/landing.php" class="nav_link">
                 <ion-icon name="settings-outline" class="nav_icon"></ion-icon>
                 <span class="nav_name">Settings</span>

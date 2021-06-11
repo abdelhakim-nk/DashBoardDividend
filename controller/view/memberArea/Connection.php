@@ -69,6 +69,11 @@ if (isset($_SESSION['user'])) {
     <p class="text-center"><a href="Registration.php">Inscription</a></p>
 </div>
 <style>
+    body{
+        background-image: url("../../../assets/img/background_co.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .login-form {
         width: 340px;
         margin: 50px auto;
@@ -93,7 +98,7 @@ if (isset($_SESSION['user'])) {
     .btn {
         font-size: 15px;
         font-weight: bold;
-    }
+    }       
 </style>
 </body>
 </html>

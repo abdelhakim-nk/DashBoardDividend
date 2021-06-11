@@ -15,7 +15,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     $pdo = ConnexionDb::getConnexionDb();
     /* Je verifie que le user est bien inscrit dans note BDD*/
-    $check = $pdo->prepare('SELECT pseudo, email, password FROM utilisateurs WHERE email = ?');
+    $check = $pdo->prepare('SELECT pseudo, email, password, avatar FROM utilisateurs WHERE email = ?');
     $check->execute(array($email));
     /*Je stock les données dans data que je vais chercher avec fetch*/
     $data = $check->fetch();
@@ -34,6 +34,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             if ($data['password'] === $password) {
                 /* Creation d'une session que j'apelle user et je lui attribut le pseudo du user comme valeur*/
                 $_SESSION['user'] = $data['pseudo'];
+                $_SESSION['avatar'] = $data['avatar'];
                 header('Location: /ProjectFinance/Index.php');
             } else header('Location: Connection.php?login_err=password');
 

@@ -79,7 +79,7 @@
                    autocomplete="off">
         </div>
         <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required"
+            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required="required" pattern="{5,25}"
                    autocomplete="off">
         </div>
         <div class="form-group">
@@ -97,6 +97,11 @@
     </form>
 </div>
 <style>
+    body{
+        background-image: url("../../../assets/img/background_co.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .login-form {
         width: 340px;
         margin: 50px auto;

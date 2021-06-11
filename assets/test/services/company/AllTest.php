@@ -7,6 +7,7 @@ $pathTestExDividendAfterDate = $pathRoot . "/ProjectFinance/assets/test/services
 $pathTestExDividendBetweenDate = $pathRoot . "/ProjectFinance/assets/test/services/company/GetExDividendBetweenDate.php";
 $pathTestFindByName = $pathRoot . "/ProjectFinance/assets/test/services/company/GetFindByName.php";
 $pathTestFindById = $pathRoot . "/ProjectFinance/assets/test/services/company/GetFindById.php";
+$pathTestFindByPaydDate = $pathRoot . "/ProjectFinance/assets/test/services/company/FindByPaydDate.php";
 
 echo "<h1 style='text-decoration: underline'>Set of my tests </h1>";
 
@@ -36,3 +37,8 @@ echo "<br>";
 echo "<br>";
 
 include_once($pathTestFindById);
+
+echo "<br>";
+echo "<br>";
+
+include_once($pathTestFindByPaydDate);

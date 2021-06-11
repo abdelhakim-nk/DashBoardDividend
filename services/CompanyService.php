@@ -102,4 +102,10 @@ class CompanyService
     {
         return CompanyRepository::nbRow();
     }
+
+
+    public static function companyPaydDate(): array
+    {
+        return CompanyRepository::findByPaydDate();
+    }
 }

@@ -21,3 +21,9 @@ function colorLink(){
     this.classList.add('active')
 }
 linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+
+
+ document.getElementById('avatar').addEventListener("submit", function (){
+     document.location.reload()
+ })

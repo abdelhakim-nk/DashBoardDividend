@@ -113,4 +113,12 @@ class CompanyRepository
         return $pdo->query("SELECT COUNT(id) as nbRow FROM company")->fetchAll();
     }
 
+    public static function findByPaydDate(): array
+    {
+        $pdo = connexionDb::getConnexionDb();
+        $qry = $pdo->prepare("SELECT " . Company::NAME . "," . Company::PAY_DATE . " FROM company");
+        $qry->execute();
+        return $qry->fetchAll();
+    }
+
 }

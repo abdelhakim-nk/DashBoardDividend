@@ -10,6 +10,7 @@
     --bg-color: #12192C;
     --sub-color: #B6CEFC;
     --white-color: #FFF;
+    --red-color: #FF5733;
 
 /*-- ====== font and typography ===== -*/
     --body-font: 'Poppins', sans-serif;
@@ -99,9 +100,33 @@ a{
     transition: .3s;
     cursor: pointer;
 }
+
 .nav_link:hover{
     background-color: var(--first-color);
+    color: var(--white-color);
+    text-decoration: none;
+    text-transform: none;
 }
+
+.nav_deco{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: .75rem;
+    padding: .75rem;
+    color: var(--white-color);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.nav_deco:hover{
+    background-color: var(--red-color);
+    color: var(--white-color);
+    text-decoration: none;
+}
+
 .nav_icon{
     font-size: 1.25rem;
 }

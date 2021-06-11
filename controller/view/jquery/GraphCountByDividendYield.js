@@ -3,15 +3,15 @@ $(document).ready(function () {
         type: "GET",
         url: "/ProjectFinance/controller/api/ControllerAll.php",
         dataType: "json",
-        success: function (response) {
-            var arrayReponse = response;
-            var i;
-            var col1 = 0;
-            var col2 = 0;
-            var col3 = 0;
-            var col4 = 0;
-            var col5 = 0;
-            var col6 = 0;
+        success: function (response)  {
+            let arrayReponse = response;
+            let i;
+            let col1 = 0;
+            let col2 = 0;
+            let col3 = 0;
+            let col4 = 0;
+            let col5 = 0;
+            let col6 = 0;
             for (i = 0; i < arrayReponse.length; i++) {
                 if (predicateYieldBetween0and1(arrayReponse[i])) {
                     col1++;
@@ -27,21 +27,21 @@ $(document).ready(function () {
                     col6++;
                 }
             }
-            var ctx = document.getElementById('graph1').getContext('2d');
+            let ctx = document.getElementById('graph1').getContext('2d');
 
 
-            var data = {
+            let data = {
                 labels: ['0 & 1', '1 & 2', '2 & 3', '3 & 4', '4 & 5', '5 and the rest'],
                 datasets: [{
                     label: 'Company',
                     data: [col1, col2, col3, col4, col5, col6],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
-                        'rgba(255, 205, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(55, 36, 132, 0.5)',
+                        'rgba(132, 36, 79, 0.5)',
+                        'rgba(222, 135, 174, 0.5)',
+                        'rgba(43, 156, 65, 0.5)',
+                        'rgba(178, 21, 21, 0.5)',
+                        'rgba(208, 230, 40, 0.5)',
                     ],
                     borderColor: [
                         'rgb(255, 99, 132)',
@@ -55,20 +55,20 @@ $(document).ready(function () {
                 }]
             }
 
-            var options = {
+            let options = {
                 responsive: true,
                 maintainAspectRatio: true,
             };
 
 
-            var config = {
+            let config = {
                 type: 'bar',
                 data: data,
                 options: options
             };
 
 
-            var graph1 = new Chart(ctx, config);
+            let graph1 = new Chart(ctx, config);
         }
 
 

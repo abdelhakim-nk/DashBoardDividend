@@ -4,7 +4,7 @@ $pathCompany = $pathRoot . "/ProjectFinance/assets/domaine/Company.php";
 $pathCompanyService = $pathRoot . "/ProjectFinance/services/CompanyService.php";
 include_once($pathCompany);
 include_once($pathCompanyService);
-echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">';
+echo '<link rel="stylesheet" href="../../assets/bootstrap-4.6.0-dist/css/bootstrap.min.css">';
 
 
 echo "<h2 style='text-align: center'>Table Jquery of all  with pagination And possibility to searching by dividend</h2>";
@@ -30,5 +30,5 @@ echo '</table>';
 echo '<button  onclick="previous()" id="buttonPrevious">PREVIOUS</button>';
 echo '<button onclick="next()">NEXT</button>';
 
-echo '<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>';
+echo '<script src="../../assets/jquery/dist/jquery.min.js"></script>';
 echo '<script src="jquery/TableWithPaginationAndDividendJquery.js"></script>';

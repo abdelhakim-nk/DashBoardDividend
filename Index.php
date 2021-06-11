@@ -11,7 +11,7 @@ if (!isset($_SESSION['user'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="controller/view/home/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <title>Home page project finance</title>
 </head>
@@ -25,16 +25,16 @@ include_once('controller/view/home/HomeNavMenu.php');
 
 <div id="container">
     <div class="home_img">
-        <img src="controller/view/home/img/stock exchange.png" alt="stock Exchange">
+        <img src="assets/img/stock exchange.png" alt="stock Exchange">
     </div>
     <div class="home_img">
-        <img src="controller/view/home/img/dividend board.png" alt="Dividends">
+        <img src="assets/img/dividend board.png" alt="Dividends">
     </div>
     <div class="home_img">
-        <img src="controller/view/home/img/graphic.png" alt="Grapic">
+        <img src="assets/img/graphic.png" alt="Grapic">
     </div>
     <div class="home_img">
-        <img src="controller/view/home/img/news_actu.jpg" alt="Grapic">
+        <img src="assets/img/news_actu.jpg" alt="Grapic">
     </div>
 </div>
 
